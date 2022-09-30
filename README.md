@@ -1,9 +1,10 @@
 # food4u
 
-Contributors:
-Jonas Raedler U06482163
-Dhanik Patel 
-Lingxi Kuang
-Simon Cen
-Venika Vachani
-Vineet Raju
+### Contributors:
+
+<p>Jonas Raedler U06482163 <br>
+Dhanik Patel <br>
+Lingxi Kuang <br>
+Simon Cen <br>
+Venika Vachani <br>
+Vineet Raju </p>
