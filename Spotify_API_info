@@ -1,0 +1,10 @@
+
+A common problem within the world of fitness is figuring out what is the best type of workout song. 
+We often ask ourselves, “What would be a good song to match this workout” or just want new music to experiment with our normal routine that would fit within that workout.
+As a team, we thought that working with the Spotify API data, Fitbit API data, and Apple Healthkit API data, would ultimately alleviate some of the decision making when figuring out what music would best fit. 
+We think it is possible to recommend users certain tracks or genres of music based on their data recorded in their health apps. 
+However, this is not an application where it is one size fits all is employed. We think that having input from the user about what genres or tracks that they enjoyed and did not enjoy would help search for new songs that would fit. 
+This can be accomplished by liked songs, playlists they frequently listen to, or what their close friends are listening to.
+Similar to the first idea, we want to add many different features such as  “What are your friends listening to?” or “Would you like to try your friend’s workout music?” which gives the application a social aspect. 
+Additionally, our application will track your workout and what kind of music allows you to perform the best. The goal of this application is to help people figure out what music they would like to listen to while working out and experiment with their friends’ music as well. 
+This application will help you create playlists to ensure that you can get the best workout with music catered specifically for the users.
