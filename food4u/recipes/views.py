@@ -3,5 +3,15 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello world!")
+    return render(request, "recipes/index.html")
+
+
+def recipes(request):
+    return render(request, "recipes/recipes.html")
+
+def ingredients(request):
+    return render(request, "recipes/ingredients.html")
+
+def recipe(request):
+    return HttpResponse("not yet.")
 

@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'recipes/styles.css' %}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+    <h1 align="center">food4u</h1>
+
+    <div class="navbar-wrapper">
+        <nav class="navbar">
+
+            <div class="navbar-item">
+                <a href="">Home</a>
+            </div>
+
+            <div class="navbar-item">
+                <a href="{% url 'recipes' %}">Recipes</a>
+            </div>
+
+            <div class="navbar-item">
+                <a href="{% url 'ingredients' %}">Ingredients</a>
+            </div>
+
+        </nav>
+    </div>
+
+    <div class="body">
+        {% block body%}
+
+
+
+
+        {% endblock %}
+    </div>
+</body>
+</html>
