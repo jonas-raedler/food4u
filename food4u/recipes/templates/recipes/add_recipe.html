@@ -1,0 +1,41 @@
+{% extends "recipes/layout.html" %}
+
+{% block title %} Add Recipe {% endblock %}
+
+{% block body %}
+<h1>Add Recipe</h1>
+<hr>
+
+
+    <div>
+        <form action="{% url 'add_recipe' %}" method="post" onkeydown="return event.key != 'Enter';">
+            {% csrf_token %}
+
+            <div class="form-group form-item">
+                <label for="name_of_slide">Name of Slide:</label>
+                <select class="custom-select" name="name_of_slide" id="name_of_slide">
+                    <option selected disabled hidden value="">Choose the preferred Slide...</option>
+                    {% for prealignment in prealignments %}
+                        <option value="{{ prealignment.slide_name }}">{{ prealignment }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group form-item">
+                <label for="computer">Working Computer</label>
+                <select class="custom-select" name="computer" id="computer">
+                    <option selected disabled hidden value="">Current computer...</option>
+                    <option value="server">Server</option>
+                    <option value="workstation">Workstation</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <button type="submit" class="btn btn-primary" id="form-button-alignment">Start Alignment</button>
+            </div>
+
+        </form>
+    </div>
+
+
+{% endblock %}

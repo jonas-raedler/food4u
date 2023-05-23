@@ -2,10 +2,17 @@
 
 {% block title %} Recipes {% endblock %}
 
+
+
 {% block body %}
-<h1>Recipes:</h1>
+
+<h1>Recipes</h1>
+<hr>
+
+<a href="{% url 'add_recipe' %}" class="button btn btn-success" role="button">Add Recipe</a>
 <ul>
     <li>Sweet Potato - Broccoli Curry</li>
     <li>Chickpea Salad</li>
 </ul>
+
 {% endblock %}

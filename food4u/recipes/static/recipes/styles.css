@@ -4,32 +4,88 @@
         url('../static/fonts/Poppins-Regular.ttf') format("truetype");
 }
 
+/*
+
+Color Palette
+--------------------
+Dark Green:  #386641
+Green:       #6A994E
+Light Green: #A7C957
+White:       #F2E8CF
+Red:         #BC4749
+--------------------
+
+*/
+
 body {
-    padding-top: 1%;
+    background-color: #F2E8CF;
+    font-size: 16px;
 }
 
-.navbar-wrapper {
-    background-color: #FFFFFF;
-    padding: 2px;
+.header {
+    background-color: #386641;
+    padding: 20px;
+    color: #F2E8CF;
 }
 
+
+/* Navbar */
 .navbar {
-
-    width: 20%;
-    border: 1px solid;
-    align: center;
+    background-color: #6A994E;
+    width: 100%;
+    padding: 0;
+    padding-right: 30%;
+    padding-left: 30%;
     margin: auto;
-    list-style-type: none;
-    padding: 12px;
-
 
 }
 
+/* Navbar Boxes */
+.navbar-item {
+
+    width: max-content;
+    text-align: center;
+    padding: 14px;
+    font-size: 24px;
+    height: 100%;
+}
+
+.navbar-item:hover {
+    box-shadow: inset 0px 1.5px 0px 0px #000000;
+    background-color: #386641;
+}
+
+
+/* Links in Navbar Boxes */
 .navbar-item a {
-
-    border: 1px solid;
+    color: #F2E8CF;
 }
+
+.navbar-item a:hover {
+    text-decoration: none;
+}
+
 
 .body {
-    padding: 1%;
+    padding: 3%;
 }
+
+body a {
+    color: black;
+    text-decoration: none;
+}
+
+body a:hover {
+    color: black;
+}
+
+.button {
+    background-color: #6A994E;
+    border: none;
+}
+
+.button:hover {
+    background-color: #386641;
+}
+
+

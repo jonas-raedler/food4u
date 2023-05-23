@@ -11,25 +11,26 @@
 </head>
 <body>
 
-    <h1 align="center">food4u</h1>
+        <div class="header">
+            <h1 align="center">food4u</h1>
+        </div>
 
-    <div class="navbar-wrapper">
-        <nav class="navbar">
+        <div class="navbar row">
 
-            <div class="navbar-item">
+            <div class="navbar-item col">
                 <a href="">Home</a>
             </div>
 
-            <div class="navbar-item">
+            <div class="navbar-item col">
                 <a href="{% url 'recipes' %}">Recipes</a>
             </div>
 
-            <div class="navbar-item">
+            <div class="navbar-item col">
                 <a href="{% url 'ingredients' %}">Ingredients</a>
             </div>
 
-        </nav>
-    </div>
+        </div>
+
 
     <div class="body">
         {% block body%}

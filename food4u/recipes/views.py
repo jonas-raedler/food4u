@@ -15,3 +15,6 @@ def ingredients(request):
 def recipe(request):
     return HttpResponse("not yet.")
 
+def add_recipe(request):
+    return render(request, "recipes/add_recipe.html")
+
