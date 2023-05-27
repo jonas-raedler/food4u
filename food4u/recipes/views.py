@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+
+from .forms import RecipeForm, MyForm
 
 # Create your views here.
 def index(request):
@@ -15,6 +17,12 @@ def ingredients(request):
 def recipe(request):
     return HttpResponse("not yet.")
 
+
+
 def add_recipe(request):
+
+    #if request.method == "POST":
+
+
     return render(request, "recipes/add_recipe.html")
 
