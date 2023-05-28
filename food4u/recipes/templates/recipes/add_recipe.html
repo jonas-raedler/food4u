@@ -12,21 +12,20 @@
 
             <!-- Recipe Name -->
             <label for="recipe_name">Name of Recipe:</label>
-            <input type="text" id="recipe_name" name="recipe_name">
+            <input type="text" id="recipe_name" name="recipe_name" size="50">
             <br>
 
-            <!-- Ingredient List
+            <!-- Ingredient List -->
             <label for="ingredient_1">Ingredient:</label>
-            <input type="text" id="ingredient_1" name="ingredient_1">
-            -->
+            <input type="text" id="ingredient_1" name="ingredient_1" size="30">
 
             <div id="ingredient_list">
-                <!-- To be filled -->
+                <!-- To be filled by JavaScript -->
             </div>
 
-            <button class="add">New Ingredient</button>
-            <button class="remove">Remove Ingredient</button>
-            <input type="hidden" value="1" id="#total_number">
+            <button type="button" onclick="add()">New Ingredient</button>
+            <button type="button" onclick="remove()">Remove Ingredient</button>
+            <input type="hidden" value="1" id="total_number">
 
 
             <br>
