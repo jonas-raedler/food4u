@@ -92,4 +92,48 @@ body a:hover {
 .add_recipe {
     font-size: 18px;
     font-weight: normal;
+    width: 44%;
+    float: left;
 }
+
+.add_recipe input[type=text] {
+    padding: 8px 8px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid;
+
+}
+
+#add_ingredients_section {
+    width: 50%;
+    float: left;
+    margin-top: 3%;
+
+}
+
+#submit_recipe {
+    margin-top: 3%;
+    margin-right: 2.5%;
+    float: right;
+}
+
+.instruction_div {
+    font-size: 18px;
+}
+
+#recipe_instructions {
+    border: 1px solid;
+    width: 50%;
+    float: left;
+    padding: 8px 8px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid;
+}
+
+.bigblock {
+    width: 93%;
+}
+
