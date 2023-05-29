@@ -67,7 +67,6 @@ body {
     padding-top: 3%;
     padding-left: 10%;
     padding-right: 10%;
-
 }
 
 body a {
@@ -92,7 +91,7 @@ body a:hover {
 .add_recipe {
     font-size: 18px;
     font-weight: normal;
-    width: 44%;
+    width: 590px;
     float: left;
 }
 
@@ -107,9 +106,10 @@ body a:hover {
 }
 
 #add_ingredients_section {
-    width: 50%;
+    width: 300px;
     float: left;
     margin-top: 3%;
+    margin-bottom: 10%;
 
 }
 
@@ -125,15 +125,15 @@ body a:hover {
 
 #recipe_instructions {
     border: 1px solid;
-    width: 50%;
-    float: left;
+    width: 40%;
     padding: 8px 8px;
     box-sizing: border-box;
     border-radius: 8px;
     border: 1px solid;
+    margin-bottom: 5%;
 }
 
 .bigblock {
-    width: 93%;
+    width: 1300px;
 }
 

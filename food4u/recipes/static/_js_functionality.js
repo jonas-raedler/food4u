@@ -5,9 +5,9 @@ function add() {
     var new_input = "" +
         "<div id=ingr_form_item_" + new_ingredient_no + ">" +
             "<label for='ingredient_" + new_ingredient_no + "'>Ingredient:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>" +
-            "<input type='text' name='quantity_" + new_ingredient_no + "' size='2' placeholder='e.g. 3' style='margin-right: 10px;'>" +
-            "<input type='text' name='measurement_" + new_ingredient_no + "' size='2' placeholder='Tbsp.' style='margin-right: 10px;'>" +
-            "<input type='text' name='ingredient_" + new_ingredient_no + "' id='ingredient_" + new_ingredient_no + "' size='30' placeholder='Honey'>" +
+            "<input type='text' name='quantity_" + new_ingredient_no + "' size='2' style='margin-right: 10px;'>" +
+            "<input type='text' name='measurement_" + new_ingredient_no + "' size='2' style='margin-right: 10px;'>" +
+            "<input type='text' name='ingredient_" + new_ingredient_no + "' id='ingredient_" + new_ingredient_no + "' size='25'>" +
         "</div>";
 
 
@@ -28,6 +28,3 @@ function remove() {
 }
 
 
-function addLineBreak() {
-    var
-}
