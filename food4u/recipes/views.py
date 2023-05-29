@@ -24,11 +24,6 @@ def recipe(request):
 def add_recipe(request):
 
     if request.method == "POST":
-        # print(list(request.POST.items()))
-        # [('csrfmiddlewaretoken', 'QjJpZuIwFhsECwYptXPnUxtNhodXl46cc52b6XHFFi6vBbI1wZjGUlFijkgvc5D5'),
-        #  ('recipe_name', ''), ('quantity_1', ''), ('measurement_1', ''), ('ingredient_1', ''), ('quantity_2', ''),
-        #  ('measurement_2', ''), ('ingredient_2', ''), ('quantity_3', ''), ('measurement_3', ''), ('ingredient_3', ''),
-        #  ('quantity_4', ''), ('measurement_4', ''), ('ingredient_4', '')]
 
         recipe_name = request.POST["recipe_name"]
         recipe_instructions = request.POST["recipe_instructions"]
@@ -46,23 +41,34 @@ def add_recipe(request):
             ingredients.append(get_base_ingredient(ingredient))
 
 
-        recipe = Recipe(recipe_name=recipe_name,
-                        all_ingredients=complete_ingredient_string,
-                        instructions=recipe_instructions)
-        recipe.save()
-
-        # Ingredient.objects.filter(ingredient_name=ingredient).exists()
-
-
+        # Create recipe object
+        if recipe_name and complete_ingredient_string:
+            recipe_obj = Recipe(recipe_name=recipe_name,
+                            all_ingredients=complete_ingredient_string,
+                            instructions=recipe_instructions)
+            recipe_obj.save()
 
 
+        # Make ingredients into Ingredient Objects and assign them to recipe
+        for ingredient in ingredients:
 
-        print(ingredients)
-        print(complete_ingredient_string)
-        print(recipe_instructions)
-        print(recipe_name)
+            # Retrieve already existing ingredient object
+            if Ingredient.objects.filter(ingredient_name=ingredient).exists():
+                ingr_obj = list(Ingredient.objects.filter(ingredient_name=ingredient))[0]
+            # Create new ingredient objects
+            else:
+                ingr_obj = Ingredient(ingredient_name=ingredient)
+                ingr_obj.save()
+
+            # Assign ingredient to recipe
+            ingr_obj.recipes.add(recipe_obj)
 
 
+        # print("All Recipes", Recipe.objects.all())
+        # print("All Ingredients", Ingredient.objects.all())
+        #
+        # print("Ingredients belonging to Recipe", recipe_obj.ingredient_set.all())
+        # print("Recipes with Ingredient", ingr_obj.recipes.all())
 
 
     return render(request, "recipes/add_recipe.html")
