@@ -6,10 +6,10 @@
 <h1>Ingredients:</h1>
 <hr>
 <ul>
-    <li>Sweet Potato</li>
-    <li>Broccoli</li>
-    <li>Chickpea</li>
-    <li>Tomato</li>
-    <li>Soy Sauce</li>
+    {% for ingredient in all_ingredients %}
+        <li><a href="{% url 'view_ingredient' ingredient %}">{{ ingredient }}</a></li>
+    {% empty %}
+        <li>There currently are no ingredients in the database.</li>
+    {% endfor %}
 </ul>
 {% endblock %}

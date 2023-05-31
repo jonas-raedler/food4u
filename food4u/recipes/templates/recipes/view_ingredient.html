@@ -1,0 +1,15 @@
+{% extends "recipes/layout.html" %}
+
+{% block title %} {{ ingredient }} {% endblock %}
+
+{% block body %}
+<h1>Recipes with {{ ingredient }}</h1>
+<hr>
+<ul>
+    {% for recipe in recipes_with_ingredient %}
+        <li><a href="{% url 'view_recipe' recipe %}">{{ recipe }}</a></li>
+    {% empty %}
+        <li>There currently are no recipes with this ingredient in the database.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

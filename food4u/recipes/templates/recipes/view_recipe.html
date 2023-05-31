@@ -1,0 +1,36 @@
+{% extends "recipes/layout.html" %}
+
+{% block title %} {{ recipe }} {% endblock %}
+
+
+
+{% block body %}
+
+<h1>{{ recipe_name }}</h1>
+<hr>
+
+<h5><u>Ingredients:</u></h5>
+
+<!-- List of Ingredients -->
+<ul>
+    {% for ingredient in ingredients%}
+        <li>{{ ingredient }}</li>
+    {% empty %}
+        <li>This recipe does not have any ingredients</li>
+    {% endfor %}
+</ul>
+
+<br>
+
+<!-- List of Instructions -->
+<h5><u>Instructions:</u></h5>
+
+{% for instruction_step in instructions %}
+    <p>{{ instruction_step }} </p>
+{% empty %}
+    <p>This recipe does not have any instructions</p>
+{% endfor %}
+
+
+
+{% endblock %}

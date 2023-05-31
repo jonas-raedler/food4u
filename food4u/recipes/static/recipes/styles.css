@@ -64,6 +64,7 @@ body {
 }
 
 .body {
+    font-size: 18px;
     padding-top: 3%;
     padding-left: 10%;
     padding-right: 10%;
@@ -89,7 +90,6 @@ body a:hover {
 
 
 .add_recipe {
-    font-size: 18px;
     font-weight: normal;
     width: 590px;
     float: left;

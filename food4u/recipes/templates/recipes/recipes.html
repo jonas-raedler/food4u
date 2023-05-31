@@ -9,10 +9,15 @@
 <h1>Recipes</h1>
 <hr>
 
-<a href="{% url 'add_recipe' %}" class="button btn btn-success" role="button">Add Recipe</a>
 <ul>
-    <li>Sweet Potato - Broccoli Curry</li>
-    <li>Chickpea Salad</li>
+    {% for recipe in recipes %}
+        <li><a href="{% url 'view_recipe' recipe %}">{{ recipe }}</a></li>
+    {% empty %}
+        <li>You currently have no recipes saved.</li>
+    {% endfor %}
+
 </ul>
+
+<a href="{% url 'add_recipe' %}" class="button btn btn-success" role="button">Add Recipe</a>
 
 {% endblock %}

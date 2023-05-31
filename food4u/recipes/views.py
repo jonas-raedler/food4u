@@ -9,14 +9,55 @@ def index(request):
     return render(request, "recipes/index.html")
 
 
+# Show list of all ingredients
 def recipes(request):
-    return render(request, "recipes/recipes.html")
+
+    all_recipes = Recipe.objects.all()
+
+    return render(request, "recipes/recipes.html", context={
+        "recipes": all_recipes
+    })
+
+
+# Show the details of one specific recipe
+def recipe(request, recipe_name):
+    recipe_obj = Recipe.objects.get(recipe_name=recipe_name)
+
+    all_ingredients = recipe_obj.all_ingredients
+    instructions = recipe_obj.instructions
+
+    all_ingredients = all_ingredients.split(";")[:-1]
+    instructions = instructions.replace("Step", "\nStep")[1:].split("\n")
+
+    return render(request, "recipes/view_recipe.html", {
+        "recipe_name": recipe_name,
+        "ingredients": all_ingredients,
+        "instructions": instructions
+    })
+
+
 
 def ingredients(request):
-    return render(request, "recipes/ingredients.html")
 
-def recipe(request):
-    return HttpResponse("not yet.")
+    all_ingredients = Ingredient.objects.all()
+
+    return render(request, "recipes/ingredients.html", {
+        "all_ingredients": all_ingredients
+    })
+
+
+def ingredient(request, ingredient_name):
+
+    ingredient_obj = Ingredient.objects.get(ingredient_name=ingredient_name)
+    recipes_with_ingredient = ingredient_obj.recipes.all()
+
+    return render(request, "recipes/view_ingredient.html", {
+        "ingredient": ingredient_name,
+        "recipes_with_ingredient": recipes_with_ingredient
+    })
+
+
+
 
 
 
@@ -54,7 +95,7 @@ def add_recipe(request):
 
             # Retrieve already existing ingredient object
             if Ingredient.objects.filter(ingredient_name=ingredient).exists():
-                ingr_obj = list(Ingredient.objects.filter(ingredient_name=ingredient))[0]
+                ingr_obj = list(Ingredient.objects.get(ingredient_name=ingredient))
             # Create new ingredient objects
             else:
                 ingr_obj = Ingredient(ingredient_name=ingredient)
