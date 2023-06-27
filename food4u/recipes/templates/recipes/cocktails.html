@@ -1,0 +1,23 @@
+{% extends "recipes/layout.html" %}
+
+{% block title %} Cocktails {% endblock %}
+
+
+
+{% block body %}
+
+<h1>Cocktails</h1>
+<hr>
+
+<ul>
+    {% for cocktail in cocktails %}
+        <li><a href="{% url 'view_cocktail' cocktail %}">{{ cocktail }}</a></li>
+    {% empty %}
+        <li>You currently have no cocktails saved.</li>
+    {% endfor %}
+
+</ul>
+
+<a href="{% url 'add_cocktail' %}" class="button btn btn-success" role="button">Add Cocktail</a>
+
+{% endblock %}

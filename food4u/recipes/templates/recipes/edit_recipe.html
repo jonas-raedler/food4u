@@ -1,0 +1,58 @@
+{% extends "recipes/layout.html" %}
+
+{% block title %} Edit Recipe {% endblock %}
+
+{% block body %}
+<h1>Edit Recipe</h1>
+<hr>
+
+    <div class="bigblock">
+        <form action="{% url 'edit_recipe' recipe_name %}" method="post">
+            <div class="add_recipe" onkeydown="return event.key != 'Enter';">
+                {% csrf_token %}
+
+                <!-- Recipe Name -->
+                <label for="recipe_name">Name of Recipe:&nbsp&nbsp</label>
+                <input type="text" id="recipe_name" name="recipe_name" value="{{ recipe_name }}" size="45">
+                <br>
+
+                <!-- Ingredient List -->
+                <div id="ingredient_list">
+                {% for description in ingredient_list %}
+                    <label for="ingredient_1">Ingredient:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                    <input type="text" name="quantity_1" size="2" value="{{ description.0 }}">
+                    <input type="text" name="measurement_1" size="2" value="{{ description.1 }}">
+                    <input type="text" id="ingredient_1" name="ingredient_1" size="25" value="{{ description.2 }}">
+                {% empty %}
+                    <label for="ingredient_1">Ingredient:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                    <input type="text" name="quantity_1" size="2" placeholder="e.g. 3">
+                    <input type="text" name="measurement_1" size="2" placeholder="Tbsp.">
+                    <input type="text" id="ingredient_1" name="ingredient_1" size="25" placeholder="Honey">
+                {% endfor %}
+
+
+                    <!-- To be filled by JavaScript -->
+                </div>
+
+                <!-- Add/Remove Ingredients Buttons -->
+                <div id="add_ingredients_section">
+                    <input type="hidden" value="{{ total_ingredients }}" id="total_number">
+                    <button class="btn btn-secondary" type="button" onclick="add()">New Ingredient</button>
+                    <button class="btn btn-secondary" type="button" onclick="remove()">Remove Ingredient</button>
+                </div>
+
+                <!-- Submit Form -->
+                <button type="submit" id="submit_recipe" name="save_changes" class="button btn btn-success">Save Changes</button>
+
+            </div>
+
+            <div class="instruction_div">
+                <label for="recipe_instructions">Instructions:</label>
+                <textarea id="recipe_instructions" name="recipe_instructions" class="form-control" rows="15">{{ instructions }}</textarea>
+            </div>
+
+        </form>
+    </div>
+
+
+{% endblock %}

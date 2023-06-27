@@ -1,6 +1,6 @@
 {% extends "recipes/layout.html" %}
 
-{% block title %} {{ recipe_name }} {% endblock %}
+{% block title %} {{ cocktail }} {% endblock %}
 
 
 
@@ -31,17 +31,6 @@
     <p>This recipe does not have any instructions</p>
 {% endfor %}
 
-<br>
-<br>
-
-
-<form action="{% url 'view_recipe' recipe_name %}" method="post">
-    <div class="add_recipe" onkeydown="return event.key != 'Enter';">
-        {% csrf_token %}
-        <button type="submit" name="edit" class="btn btn-secondary" style="margin-right:5px">Edit Recipe</button>
-        <button type="submit" name="delete" class="btn btn-secondary">Delete Recipe</button>
-    </div>
-</form>
 
 
 {% endblock %}

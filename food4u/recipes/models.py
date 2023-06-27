@@ -5,6 +5,7 @@ class Recipe(models.Model):
     recipe_name = models.CharField(max_length=150)
     all_ingredients = models.TextField()
     instructions = models.TextField()
+    cocktail = models.BooleanField(default=False)
 
     def __str__(self):
         return self.recipe_name

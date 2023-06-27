@@ -93,6 +93,7 @@ body a:hover {
     font-weight: normal;
     width: 590px;
     float: left;
+    margin-bottom: 5%;
 }
 
 .add_recipe input[type=text] {
